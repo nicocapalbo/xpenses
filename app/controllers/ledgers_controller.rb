@@ -12,8 +12,7 @@ class LedgersController < ApplicationController
   end
 
   def create
-    @ledger = Ledger.new(ledger_params)
-    @ledger.user = current_user
+    @ledger = current_user.ledgers.new(ledger_params)
     if @ledger.save!
       redirect_to ledger_path(@ledger)
     else
