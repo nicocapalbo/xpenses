@@ -1,5 +1,5 @@
 current directory: /Users/nicocapalbo/code/nicocapalbo/xpenses/vendor/bundle/ruby/2.6.0/gems/sassc-2.4.0/ext
-/Users/nicocapalbo/.rbenv/versions/2.6.6/bin/ruby -I /Users/nicocapalbo/.rbenv/versions/2.6.6/lib/ruby/2.6.0 -r ./siteconf20210706-68925-1y1wjxt.rb extconf.rb
+/Users/nicocapalbo/.rbenv/versions/2.6.6/bin/ruby -I /Users/nicocapalbo/.rbenv/versions/2.6.6/lib/ruby/2.6.0 -r ./siteconf20210709-32306-hvucyh.rb extconf.rb
 creating Makefile
 
 current directory: /Users/nicocapalbo/code/nicocapalbo/xpenses/vendor/bundle/ruby/2.6.0/gems/sassc-2.4.0/ext
@@ -77,4 +77,4 @@ linking shared-object sassc/libsass.bundle
 
 current directory: /Users/nicocapalbo/code/nicocapalbo/xpenses/vendor/bundle/ruby/2.6.0/gems/sassc-2.4.0/ext
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 libsass.bundle ./.gem.20210706-68925-329nlz/sassc
+/usr/bin/install -c -m 0755 libsass.bundle ./.gem.20210709-32306-1nlibe3/sassc
