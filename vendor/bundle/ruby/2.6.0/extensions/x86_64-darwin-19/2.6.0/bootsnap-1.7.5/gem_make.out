@@ -1,5 +1,5 @@
 current directory: /Users/nicocapalbo/code/nicocapalbo/xpenses/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.7.5/ext/bootsnap
-/Users/nicocapalbo/.rbenv/versions/2.6.6/bin/ruby -I /Users/nicocapalbo/.rbenv/versions/2.6.6/lib/ruby/2.6.0 -r ./siteconf20210706-68925-1ohfcid.rb extconf.rb
+/Users/nicocapalbo/.rbenv/versions/2.6.6/bin/ruby -I /Users/nicocapalbo/.rbenv/versions/2.6.6/lib/ruby/2.6.0 -r ./siteconf20210709-32306-c7k8s7.rb extconf.rb
 creating Makefile
 
 current directory: /Users/nicocapalbo/code/nicocapalbo/xpenses/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.7.5/ext/bootsnap
@@ -12,4 +12,4 @@ linking shared-object bootsnap/bootsnap.bundle
 
 current directory: /Users/nicocapalbo/code/nicocapalbo/xpenses/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.7.5/ext/bootsnap
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20210706-68925-1lf80fk/bootsnap
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20210709-32306-vn7yn1/bootsnap
