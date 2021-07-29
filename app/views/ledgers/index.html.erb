@@ -1,0 +1,16 @@
+<% @ledgers.each do |ledger| %>
+
+  <%= link_to ledger_path(ledger) do %>
+    <div class="shadow w-full h-72 bg-white rounded-2xl">
+      <div class="flex justify-between p-8 h-full">
+        <div>ICON</div>
+        <div class="flex flex-col justify-between">
+          <p>Title of the ledger</p>
+          <p>Short description</p>
+          <p>net worth maybe??</p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+<% end %>

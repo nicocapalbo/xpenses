@@ -1,0 +1,29 @@
+class LedgersController < ApplicationController
+  def index
+    @ledgers = Ledger.all
+  end
+
+  def show
+    @ledger = Ledger.find(params[:id])
+    @transactions = Transaction.where(ledger: @ledger)
+  end
+
+  def new
+    @ledger = Ledger.new
+  end
+
+  def create
+    @ledger = current_user.ledgers.new(ledger_params)
+    if @ledger.save!
+      redirect_to ledger_path(@ledger)
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def ledger_params
+    params.require(:ledger).permit(:name, :description)
+  end
+end

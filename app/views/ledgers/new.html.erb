@@ -1,0 +1,9 @@
+<h1>test of new ledger</h1>
+
+<%= form_with(model: @ledger, local: true) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :description %>
+  <%= form.text_field :description %>
+  <%= form.submit %>
+<% end %>
