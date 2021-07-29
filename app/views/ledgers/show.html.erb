@@ -1,3 +1,29 @@
-<%= render 'shared/menu' %>
+<div class="px-8 py-8">
+  <table id="table" class="w-full">
+    <thead>
+      <tr>
+        <th class="">Account</th>
+        <th class="">Date</th>
+        <th class="">Payee</th>
+        <th class="">Category</th>
+        <th class="">Cleared</th>
+        <th class="">Payment</th>
+        <th class="">Deposit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @transactions.each do |transaction| %>
+        <tr>
+          <td class=""><%= transaction.account.name %></td>
+          <td class=""><%= transaction.date %></td>
+          <td class=""><%= transaction.info %></td>
+          <td class=""><%= transaction.subcategory.name %></td>
+          <td class=""><%= transaction.cleared %></td>
+          <td class=""><%= transaction.payment %></td>
+          <td class=""><%= transaction.deposit %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<h1>THIS IS YOUR NICE LEDGER</h1>
+</div>

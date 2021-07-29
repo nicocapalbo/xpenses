@@ -5,6 +5,7 @@ class LedgersController < ApplicationController
 
   def show
     @ledger = Ledger.find(params[:id])
+    @transactions = Transaction.where(ledger: @ledger)
   end
 
   def new
