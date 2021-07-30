@@ -26,4 +26,23 @@
     </tbody>
   </table>
 
+
+
 </div>
+
+<!-- Trigger/Open The Modal -->
+<button id="myBtn" class="w-12 h-12 rounded-full bg-green-500 text-white">+</button>
+
+<!-- The Modal -->
+<%# <div id="myModal" class="modal"> %>
+<div id="myModal" class="hidden fixed z-10 left-0 top-0 w-full h-full overflow-auto">
+
+  <!-- Modal content -->
+  <div class="modal-content w-4/5 bg-gray-200 border-red-500 p-20 mt-64">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
+
+</div>
+
+<%= javascript_pack_tag 'modal' %>
