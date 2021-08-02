@@ -5,7 +5,8 @@ class LedgersController < ApplicationController
 
   def show
     @ledger = Ledger.find(params[:id])
-    @transactions = Transaction.where(ledger: @ledger)
+    @transactions = Transaction.where(ledger: @ledger).order(date: :desc)
+    @transaction = Transaction.new
   end
 
   def new
