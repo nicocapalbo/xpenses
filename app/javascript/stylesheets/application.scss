@@ -1,3 +1,16 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+
+@layer base {
+
+  .close-btn {
+    @apply focus:outline-none
+  }
+
+  .menu-btn {
+    @apply w-full h-full py-3 px-6 text-white self-center hover:bg-green-300;
+  }
+  
+}

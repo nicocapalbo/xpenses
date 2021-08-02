@@ -1,8 +1,13 @@
-<div class="w-full h-24 bg-red-400 flex justify-between px-8 py-4 items-center">
-  <div>
-    <p>LOGO</p>
-  </div>
-  <div>
-    <button>MENU</button>
+<div id='menuBar' class="fixed right-0 top-0 w-56 h-full bg-green-500" hidden>
+  <button id='closeMenu' class="close-btn">
+    <%= image_tag 'arrow-right', class:'h-7 ml-5 text-white mt-10 mb-10'%>
+  </button>
+  <div class="h-3/4 flex flex-col justify-between">
+    <%= link_to 'Ledgers', ledgers_path, class:"menu-btn" %>
+    <%= link_to 'Ledgers', ledgers_path, class:"menu-btn" %>
+    <%= link_to 'Ledgers', ledgers_path, class:"menu-btn" %>
+    <%= link_to 'Ledgers', ledgers_path, class:"menu-btn" %>
+    <%= link_to 'Ledgers', ledgers_path, class:"menu-btn" %>
   </div>
 </div>
+
