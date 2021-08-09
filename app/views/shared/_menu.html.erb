@@ -3,9 +3,9 @@
     <%= image_tag 'arrow-right', class:'h-7 ml-5 text-white mt-10 mb-10'%>
   </button>
   <div class="h-3/4 flex flex-col justify-between">
-    <%= link_to 'Ledgers', ledgers_path, class:"menu-btn" %>
-    <%= link_to 'Account', ledgers_path, class:"menu-btn" %>
-    <%= link_to 'Ledgers', ledgers_path, class:"menu-btn" %>
+    <%= link_to 'Dashboard', ledger_dashboard_index_path(params[:ledger_id]), class:"menu-btn" %>
+    <%= link_to 'Account', ledger_accounts_path(params[:ledger_id]), class:"menu-btn" %>
+    <%= link_to 'Transactions', ledger_transactions_path(params[:ledger_id]), class:"menu-btn" %>
     <%= link_to 'Ledgers', ledgers_path, class:"menu-btn" %>
     <%= link_to 'Ledgers', ledgers_path, class:"menu-btn" %>
   </div>
