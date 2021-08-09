@@ -1,8 +1,9 @@
 class AccountsController < ApplicationController
   before_action :set_ledger, only: [:index, :create]
   def index
-    @accounts = Account.find(@ledger.id)
+    @accounts = Account.where(ledger: @ledger)
     @account = Account.new
+    console
   end
 
   def create

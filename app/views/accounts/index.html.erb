@@ -1,5 +1,18 @@
 <div class="">
   <h1>Create new Account</h1>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-16 my-4 py-8" style="justify-items:center">
+    <% @accounts.each do |account| %>
+      <%= link_to ledger_account_path(account.ledger, account) do %>
+        <div class="flex flex-col justify-around bg-white w-40 h-40 items-center rounded rounded-xl">
+          <img src="" alt="" class="w-25 h-25">  
+          <h3> <%= account.name %> </h3>
+          <p>Net value: <%= account.net_account %></p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
 </div>
 
 <!-- Trigger/Open The Modal -->
