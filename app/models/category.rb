@@ -4,6 +4,6 @@ class Category < ApplicationRecord
   has_many :transactions, through: :subcategories
 
   def category_total
-    Subcategory.where(category: self).joins(:transactions).where('date >= ? and date <= ?', Time.now.beginning_of_month, Time.now.end_of_month).sum(:payment)
+    Subcategory.where(category: self).left_outer_joins(:transactions).where('date >= ? and date <= ?', Time.now.beginning_of_month, Time.now.end_of_month).sum(:payment)
   end
 end
