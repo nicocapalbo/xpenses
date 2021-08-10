@@ -1,10 +1,37 @@
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-16 my-4 py-8" style="justify-items:center">
-    <% @accounts.each do |account| %>
-      <div class="flex flex-col justify-around bg-white w-60 h-44 items-center rounded rounded-xl">
-        <img src="" alt="" class="w-25 h-25">  
-        <h3> <%= account.name %> </h3>
-        <p>Cleared value: <%= account.cleared_account %></p>
-        <p>Balanced value: <%= account.balanced_account %></p>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-16  my-4 py-8" style="justify-items:center">
+  
+  <div class="col-start-1 col-span-1 bg-white rounded rounded-xl w-full p-4">
+    <div class="flex justify-between">
+      <h3 class="mb-3">All Cleared</h3>
+      <p>+</p>
+    </div>
+    <% @accounts.each do |account| %>    
+      <div class="flex justify-between">
+        <div>
+          <img src="" alt="" class="w-25 h-25 bg-red-400">
+          <h3> <%= account.name %> </h3>
+        </div>
+        <p><%= number_to_currency(account.cleared_account) %></p>
       </div>
     <% end %>
   </div>
+
+  
+  <div class="col-start-2 col-span-2 bg-white rounded rounded-xl w-full p-4">
+    <div class="flex justify-between">
+      <h3 class="mb-3">Expenses summary</h3>
+      <p>+</p>
+    </div>
+    <% @categories.each do |category| %>    
+      <div class="flex justify-between">
+        <div>
+          <img src="" alt="" class="w-25 h-25 bg-red-400">
+          <h3> <%= category[:category_name] %> </h3>
+        </div>
+        <p><%= number_to_currency(category[:category_total]) %></p>
+      </div>
+    <% end %>
+  </div>
+  
+
+</div>
