@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Xpenses</title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,12 +13,12 @@
 
   <body class="bg-gray-300">
 
-    <%= render 'shared/menubar' %>
-    <%= render 'shared/menu' unless url_for == '/' %>
-    <%= console %>
-    <div class="py-10 px-10">
+    <%= render 'shared/sidebar' %>
+    <section class="home-section p-8">
       <%= yield %>
-    </div>
+    </section>
+    
+    
     
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
