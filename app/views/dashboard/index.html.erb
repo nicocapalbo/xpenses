@@ -1,4 +1,4 @@
-<div class="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2 gap-4 lg:gap-8 my-4 py-8" style="justify-items:center">
+<div class="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2 gap-4 lg:gap-8" style="justify-items:center">
   
   <div class="lg:col-start-1 lg:col-span-1 w-full flip-card-container">
     <div class="flip-card">
@@ -139,7 +139,11 @@
           <div>
             <img src="" alt="" class="w-25 h-25 bg-red-400">
             <h3> <%= top_transaction.info %> </h3>
-            <span><%= top_transaction.subcategory.name %> </span>
+            <div class="flex">
+              <span><%= top_transaction.account.name %> </span>
+              <span> - </span>
+              <span><%= top_transaction.subcategory.name %> </span>
+            </div>
           </div>
           <div>
             <p><%= number_to_currency(top_transaction.payment) %></p>

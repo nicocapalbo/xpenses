@@ -5,6 +5,10 @@
 
 @layer base {
 
+  span {
+    @apply text-xs font-light 
+  }
+
   .close-btn {
     @apply focus:outline-none
   }
