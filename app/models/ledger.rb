@@ -5,12 +5,35 @@ class Ledger < ApplicationRecord
   has_many :subcategories, through: :categories
   has_many :transactions
 
-  def networth_cleared
-    self.transactions.where(cleared: true).sum(:deposit) - self.transactions.where(cleared: true).sum(:payment)
+  def ledger_cleared_deposit
+    self.transactions.where(cleared: true).sum(:deposit)
   end
 
-  def networth_balance
-    self.transactions.sum(:deposit) - self.transactions.sum(:payment)
+  def ledger_cleared_payment
+    self.transactions.where(cleared: true).sum(:payment)
   end
 
+  def ledger_cleared_month_deposit
+    self.transactions.where('date >= ? and date <= ?', Time.now.beginning_of_month, Time.now.end_of_month).where(cleared: true).sum(:deposit)
+  end
+
+  def ledger_cleared_month_payment
+    self.transactions.where('date >= ? and date <= ?', Time.now.beginning_of_month, Time.now.end_of_month).where(cleared: true).sum(:payment)
+  end
+
+  def ledger_balanced_deposit
+    self.transactions.sum(:deposit)
+  end
+
+  def ledger_balanced_payment
+    self.transactions.sum(:payment)
+  end
+
+  def ledger_balanced_month_deposit
+    self.transactions.where('date >= ? and date <= ?', Time.now.beginning_of_month, Time.now.end_of_month).sum(:deposit)
+  end
+
+  def ledger_balanced_month_payment
+    self.transactions.where('date >= ? and date <= ?', Time.now.beginning_of_month, Time.now.end_of_month).sum(:payment)
+  end
 end

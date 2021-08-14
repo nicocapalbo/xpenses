@@ -4,15 +4,18 @@ class DashboardController < ApplicationController
   def index
     @accounts = Account.where(ledger: @ledger)
     @categories = categories_total
-    @month_total = month_total
+    @month_total_expense = month_total_expense
+    @top_transactions = top_transactions
   end
 
   private
 
-  def month_total
-    month_total = 0
-    Category.all.each { |category| month_total += category.category_total }
-    month_total
+  def month_total_expense
+    Category.month_total_expense
+  end
+
+  def top_transactions
+    Transaction.month_top_transactions
   end
 
   def categories_total
