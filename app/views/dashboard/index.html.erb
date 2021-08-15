@@ -153,5 +153,10 @@
       <% end %>
     </div>
   </div>
+  
+  <div id="canvas-holder" class="lg:col-start-2 lg:col-span-2">
+    <h3 class="text-center">% of month expenses</h3>
+    <canvas id="myChart" data-labels="<%= @data_keys %>" data-data="<%= @data_values %>"></canvas>
+  </div>
 
 </div>
