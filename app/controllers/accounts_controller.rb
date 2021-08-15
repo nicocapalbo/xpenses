@@ -3,7 +3,6 @@ class AccountsController < ApplicationController
   def index
     @accounts = Account.where(ledger: @ledger)
     @account = Account.new
-    console
   end
 
   def create

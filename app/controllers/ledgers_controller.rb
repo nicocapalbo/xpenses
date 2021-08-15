@@ -3,12 +3,6 @@ class LedgersController < ApplicationController
     @ledgers = Ledger.all
   end
 
-  def show
-    @ledger = Ledger.find(params[:id])
-    @transactions = Transaction.where(ledger: @ledger).order(date: :desc)
-    @transaction = Transaction.new
-  end
-
   def new
     @ledger = Ledger.new
   end

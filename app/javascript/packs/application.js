@@ -18,10 +18,8 @@ require("channels")
 
 import "stylesheets/application"
 
-import {closeMenu} from './sideBar';
+import {sideBarClose} from './sideMenu.js';
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-  closeMenu();
+  sideBarClose();
 });
