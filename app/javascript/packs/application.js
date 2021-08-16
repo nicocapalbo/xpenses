@@ -19,7 +19,10 @@ require("channels")
 import "stylesheets/application"
 
 import {sideBarClose} from './sideMenu.js';
+// import Chart from 'chart.js/auto';
+import {donutChart} from './d_chart.js'
 
 document.addEventListener('turbolinks:load', () => {
   sideBarClose();
+  donutChart();
 });

@@ -1,6 +1,6 @@
 <div class="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2 gap-4 lg:gap-8" style="justify-items:center">
   
-  <div class="lg:col-start-1 lg:col-span-1 w-full flip-card-container">
+  <div class="lg:col-start-1 lg:col-span-1 w-full h-full flip-card-container">
     <div class="flip-card">
       <div class="flip-card-inner">
         
@@ -56,7 +56,7 @@
     </div>
   </div>
 
-  <div class="lg:col-start-1 lg:col-span-1 w-full h-full">
+  <div class="lg:col-start-1 lg:col-span-1 w-full h-full flip-card-container">
     <div class="flip-card">
       <div class="flip-card-inner">
         
@@ -152,6 +152,11 @@
         </div>
       <% end %>
     </div>
+  </div>
+  
+  <div id="canvas-holder" class="lg:col-start-2 lg:col-span-2">
+    <h3 class="text-center">% of month expenses</h3>
+    <canvas id="myChart" data-labels="<%= @data_keys %>" data-data="<%= @data_values %>"></canvas>
   </div>
 
 </div>

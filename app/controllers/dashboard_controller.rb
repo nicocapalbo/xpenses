@@ -6,6 +6,8 @@ class DashboardController < ApplicationController
     @categories = categories_total
     @month_total_expense = month_total_expense
     @top_transactions = top_transactions
+    @data_keys = chart_data_keys
+    @data_values = chart_data_values
   end
 
   private
@@ -27,6 +29,18 @@ class DashboardController < ApplicationController
       }
     end
     categories
+  end
+
+  def chart_data_keys
+    data_keys = []
+    @categories.each { |category| data_keys << category[:category_name] }
+    data_keys
+  end
+
+  def chart_data_values
+    data_values = []
+    @categories.each { |category| data_values << (category[:category_total] / @month_total_expense) }
+    data_values
   end
 
   def set_ledger
