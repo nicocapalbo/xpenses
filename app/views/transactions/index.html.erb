@@ -18,6 +18,7 @@
           <td class=""><%= transaction.date %></td>
           <td class=""><%= transaction.info %></td>
           <td class=""><%= transaction.subcategory.name %></td>
+          <td class=""><%= check_box_tag nil, nil, transaction.cleared?, data: {reflex: 'click->ExampleReflex#toggle', id: transaction.id } %></td>
           <td class=""><%= transaction.cleared %></td>
           <td class=""><%= transaction.payment %></td>
           <td class=""><%= transaction.deposit %></td>

@@ -26,3 +26,4 @@ document.addEventListener('turbolinks:load', () => {
   sideBarClose();
   donutChart();
 });
+import "controllers"
