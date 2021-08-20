@@ -34,5 +34,6 @@ class ExampleReflex < ApplicationReflex
   def toggle
     @transaction = Transaction.find(element.dataset[:id])
     @transaction.update(cleared: (!@transaction.cleared?))
+    morph "#transaction_#{@transaction.id}", render(partial: 'transaction', locals: { transaction: @transaction })
   end
 end
