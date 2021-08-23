@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :ledgers
   has_many :transactions, through: :ledgers
+  validates :email, presence: true
+  validates :email, uniqueness: true
 end

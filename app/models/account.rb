@@ -1,6 +1,8 @@
 class Account < ApplicationRecord
   belongs_to :ledger
   has_many :transactions
+  validates :name, :ledger, presence: true
+  validates :name, length: { in: 3..6 }
 
   def cleared_account
     payment_totals = self.ledger.transactions.where(account: self).sum(:payment)
