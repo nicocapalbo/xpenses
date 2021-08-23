@@ -4,8 +4,8 @@ class Transaction < ApplicationRecord
   belongs_to :subcategory
   validates :ledger, :account, :info, :subcategory, presence: true
   validates :info, length: { in: 4..20 }
-  # validates :payment, presence: true, unless: ->(transaction) { transaction.deposit.present? }
-  # validates :deposit, presence: true, unless: ->(transaction) { transaction.payment.present? }
+  validates :payment, presence: true, unless: ->(transaction) { transaction.deposit.present? }
+  validates :deposit, presence: true, unless: ->(transaction) { transaction.payment.present? }
   validates :payment, :deposit, numericality: { greater_than_or_equal: 0 }, allow_nil: true
   validate :pay_or_deposit?
 
