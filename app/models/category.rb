@@ -1,7 +1,11 @@
 class Category < ApplicationRecord
+  include Abyme::Model
+
   belongs_to :ledger
   has_many :subcategories
+  abymize :subcategories, permit: [:name]
   has_many :transactions, through: :subcategories
+  
   validates :ledger, :name, presence: true
   validates :name, length: { in: 4..20 }
 
