@@ -10,7 +10,9 @@ class Category < ApplicationRecord
   validates :name, length: { in: 4..20 }
 
   def category_total
-    Subcategory.where(category: self).left_outer_joins(:transactions).where('date >= ? and date <= ?', Time.now.beginning_of_month, Time.now.end_of_month).sum(:payment)
+    category_expense = Subcategory.where(category: self).left_outer_joins(:transactions).where(transactions: { cleared: true }).where('date >= ? and date <= ?', Time.now.beginning_of_month, Time.now.end_of_month).sum(:payment)
+    category_income = Subcategory.where(category: self).left_outer_joins(:transactions).where(transactions: { cleared: true }).where('date >= ? and date <= ?', Time.now.beginning_of_month, Time.now.end_of_month).sum(:deposit)
+    ((category_income - category_expense) *  -1 )
   end
 
   # def category_total_income
