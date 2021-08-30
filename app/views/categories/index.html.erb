@@ -1,0 +1,13 @@
+<% @categories.each do |category| %>
+  <%= link_to edit_ledger_category_path(@ledger, category) do %>
+    <div>
+      <%= category.name %>
+    </div>
+  <% end %>
+  <% category.subcategories.each do |subcat| %>
+    <%= subcat.name %>
+    <br>
+  <% end %>
+  <br>
+  <br>
+<% end %>

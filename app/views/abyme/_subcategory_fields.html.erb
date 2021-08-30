@@ -1,0 +1,6 @@
+<%# Insert subcategories fields below %>
+<%= f.text_field :name, placeholder: 'Name of the subcategory' %>
+
+<%= f.hidden_field :_destroy %>
+<%= remove_associated_record content: "Remove subcategory" %>
+        
