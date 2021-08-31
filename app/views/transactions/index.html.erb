@@ -1,22 +1,15 @@
-<div class="">
-  <table id="table" class="w-full">
-    <thead>
-      <tr>
-        <th class="">Account</th>
-        <th class="">Date</th>
-        <th class="">Payee</th>
-        <th class="">Category</th>
-        <th class="">Cleared</th>
-        <th class="">Payment</th>
-        <th class="">Deposit</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @transactions.each do |transaction| %>
-        <%= render partial: "transaction", locals: { transaction: transaction } %>
-      <% end %>
-    </tbody>
-  </table>
+<div class="grid grid-col-7 gap-4">
+
+  <div class="col-start-1 col-span-4 cardBlack rounded rounded-xl mr-8">
+    <% @transactions.each do |transaction| %>
+      <%= render partial: "transaction", locals: { transaction: transaction } %>
+    <% end %>
+  </div>
+
+  <div class="col-start-5 col-span-3 cardBlack rounded rounded-xl ">
+  <h1>HELLO WOLRD</h1>
+  </div>
+
 </div>
 
 <!-- Trigger/Open The Modal -->
