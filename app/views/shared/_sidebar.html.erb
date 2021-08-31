@@ -1,4 +1,4 @@
-<div class="sidebar">
+<div class="sidebar cardBlack">
   <div class="logo-details">
     <i class='bx bxl-c-plus-plus icon'></i>
       <div class="logo_name">CodingLab</div>
@@ -6,69 +6,64 @@
   </div>
   <ul class="nav-list">
     <li>
-        <i class='bx bx-search' ></i>
-        <input type="text" placeholder="Search...">
-        <span class="tooltip">Search</span>
-    </li>
-    <li>
       <%= link_to ledger_dashboard_index_path do %>
         <i class='bx bx-grid-alt'></i>
         <span class="links_name">Dashboard</span>
       <% end %>
-        <span class="tooltip">Dashboard</span>
+        <span class="tooltip text-card">Dashboard</span>
     </li>
     <li>
       <%= link_to ledger_accounts_path do %>
         <i class='bx bx-credit-card' ></i>
         <span class="links_name">Accounts</span>
       <% end %>
-      <span class="tooltip">Accounts</span>
+      <span class="tooltip text-card">Accounts</span>
     </li>
     <li>
       <%= link_to ledger_transactions_path do %>
         <i class='bx bx-spreadsheet' ></i>
         <span class="links_name">Transactions</span>
       <% end %>
-      <span class="tooltip">Transactions</span>
+      <span class="tooltip text-card">Transactions</span>
     </li>
     <li>
       <%= link_to ledger_categories_path do %>
         <i class='bx bx-folder' ></i>
         <span class="links_name">Categories</span>
       <% end %>
-      <span class="tooltip">Categories</span>
+      <span class="tooltip text-card">Categories</span>
     </li>
     <li>
       <a href="#">
         <i class='bx bx-cart-alt' ></i>
         <span class="links_name">Order</span>
       </a>
-      <span class="tooltip">Order</span>
+      <span class="tooltip text-card">Order</span>
     </li>
     <li>
       <a href="#">
         <i class='bx bx-heart' ></i>
         <span class="links_name">Saved</span>
       </a>
-      <span class="tooltip">Saved</span>
+      <span class="tooltip text-card">Saved</span>
     </li>
     <li>
       <a href="#">
         <i class='bx bx-user' ></i>
         <span class="links_name">User</span>
       </a>
-      <span class="tooltip">User</span>
+      <span class="tooltip text-card">User</span>
     </li>
     <li>
       <a href="#">
         <i class='bx bx-cog' ></i>
         <span class="links_name">Setting</span>
       </a>
-      <span class="tooltip">Setting</span>
+      <span class="tooltip text-card">Setting</span>
     </li>
     <li class="profile">
         <div class="profile-details">
-          <img src="profile.jpg" alt="profileImg">
+          <i class='bx bxs-user-circle' style='color:#ffffff' ></i>
           <div class="name_job">
             <div class="name">Prem Shahi</div>
             <div class="job">Web designer</div>
