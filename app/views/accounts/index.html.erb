@@ -1,21 +1,52 @@
-<div class="">
-  <h1>Create new Account</h1>
+<div class="flex flex-col justify-between h-full">
+  
+  <div>
+    <div class="w-full flex justify-between px-6">
+      <h1 class="text-4xl">My Accounts</h1>
+      <!-- Trigger/Open The Modal -->
+      <button id="myBtn" class="">
+        <i class='bx bxs-plus-circle bx-rotate-90 text-5xl' style='color:#7ee979'></i>
+      </button>
+    </div>
 
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-16 my-4 py-8" style="justify-items:center">
-    <% @accounts.each do |account| %>
-      <div class="flex flex-col justify-around bg-white w-60 h-44 items-center rounded rounded-xl">
-        <img src="" alt="" class="w-25 h-25">  
-        <h3> <%= account.name %> </h3>
-        <p>Cleared value: <%= account.cleared_account %></p>
-        <p>Balanced value: <%= account.balanced_account %></p>
-      </div>
-    <% end %>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-16 my-4 py-8" style="justify-items:center">
+      <% @accounts.each do |account| %>
+        <div class="w-80 h-48 creditCard rounded rounded-xl p-4 flex flex-col justify-between">
+          <div class="flex justify-between">
+            <p class="font-semibold text-lg"><%= account.name.upcase %></p> 
+            <img src="" alt="" class="w-25 h-25">  
+          </div>
+          <div class="flex ml-2 items-center">
+            <%= image_tag 'chip', class:'h-8' %>
+            <i class='ml-1 bx bx-wifi-2 bx-rotate-90 text-3xl text-primary'></i>
+          </div>
+          <div class="w-full align-left">
+            <div class="flex justify-between">
+              <p>Cleared</p>
+              <p><%= number_to_currency(account.cleared_account) %></p>
+            </div>
+            <div class="flex justify-between">
+              <p>Balanced</p>
+              <p class="align-left"><%= number_to_currency(account.balanced_account) %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div>
+    <div class="flex justify-end">
+      <p class="text-lg">TOTAL CLEARED</p>
+      <p class="text-lg"><%= number_to_currency(@ledger.ledger_cleared_deposit - @ledger.ledger_cleared_payment) %> </p>
+    </div>
+    <div class="flex justify-end">
+      <p class="text-2xl">TOTAL BALANCE</p>
+      <p class="text-2xl"><%= number_to_currency(@ledger.ledger_balanced_deposit - @ledger.ledger_balanced_payment) %> </p>
+    </div>
   </div>
 
 </div>
-
-<!-- Trigger/Open The Modal -->
-<button id="myBtn" class="w-12 h-12 rounded-full bg-green-500 text-white">+</button>
 
 <!-- The Modal -->
 <%# <div id="myModal" class="modal"> %>
@@ -31,11 +62,11 @@
     </div>
     
     <div>
-    <%= form_with(model: @account, url: ledger_accounts_path, local: true) do |form| %>
-      <%= form.label :name %>
-      <%= form.text_field :name %>
-      <%= form.submit %>
-    <% end %>
+      <%= form_with(model: @account, url: ledger_accounts_path, local: true) do |form| %>
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+        <%= form.submit %>
+      <% end %>
     </div>
   </div>
 
