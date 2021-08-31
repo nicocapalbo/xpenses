@@ -34,18 +34,21 @@
       <% end %>
     </div>
   </div>
+  
+  <div class="w-2/5 ml-auto grid lg:grid-cols-2 gap-x-4 justify-items-end">
+    <p class="text-base">Diff</p>
+    <p class="text-base"><%= number_to_currency(@total_info[:diff]) %></p>
 
-  <div>
-    <div class="flex justify-end">
-      <p class="text-lg">TOTAL CLEARED</p>
-      <p class="text-lg"><%= number_to_currency(@ledger.ledger_cleared_deposit - @ledger.ledger_cleared_payment) %> </p>
-    </div>
-    <div class="flex justify-end">
-      <p class="text-2xl">TOTAL BALANCE</p>
-      <p class="text-2xl"><%= number_to_currency(@ledger.ledger_balanced_deposit - @ledger.ledger_balanced_payment) %> </p>
-    </div>
+    <p class="text-base">Diff %</p>
+    <p class="text-base"><%= number_to_percentage(@total_info[:diff_percentage], precision: 2) %></p>
+
+    <p class="text-lg">TOTAL CLEARED</p>
+    <p class="text-lg"><%= number_to_currency(@total_info[:total_cleared]) %> </p>
+  
+    <p class="text-2xl">TOTAL BALANCE</p>
+    <p class="text-2xl <%= (@total_info[:total_balance]).positive? ? 'text-positive' : 'text-negative' %>"><%= number_to_currency(@total_info[:total_balance]) %> </p>
   </div>
-
+  
 </div>
 
 <!-- The Modal -->
