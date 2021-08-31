@@ -14,8 +14,16 @@
                  -6px -6px 7px #131313;
     @apply bg-main
   }
+
+  .creditCard {
+    background: radial-gradient(94.96% 94.96% at -3.11% -1.41%, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%), rgba(7, 7, 7, 0.7);
+    box-shadow: inset 1.28764px 1.03011px 1.03011px rgba(255, 255, 255, 0.25), inset -0.515054px -0.515054px 0.772581px rgba(0, 0, 0, 0.36);
+    backdrop-filter: blur(64.3818px);
+    border-radius: 10px;
+  }
+
   h1, h2, h3 { @apply font-sans text-primary }
-  h1 { @apply font-black }
+  h1 { @apply font-bold }
   h2 { @apply font-bold }
   h3 { @apply font-medium }
   h4, p, span { @apply font-mono text-primary }
@@ -310,7 +318,7 @@
   }
   .home-section{
     position: relative;
-    min-height: 100vh;
+    height: 100vh;
     top: 0;
     left: 78px;
     width: calc(100% - 78px);
