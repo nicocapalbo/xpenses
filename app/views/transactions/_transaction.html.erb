@@ -1,10 +1,26 @@
-<tr id="transaction_<%= transaction.id %>">
-  <td class=""><%= transaction.account.name %></td>
-  <td class=""><%= transaction.date %></td>
-  <td class=""><%= transaction.info %></td>
-  <td class=""><%= transaction.subcategory.name %></td>
-  <td class=""><%= check_box_tag nil, nil, transaction.cleared?, data: {reflex: 'click->ExampleReflex#toggle', id: transaction.id} %></td>
-  <td class=""><%= transaction.cleared %></td>
-  <td class=""><%= transaction.payment %></td>
-  <td class=""><%= transaction.deposit %></td>
-</tr>
+<div id="transaction_<%= transaction.id %>" class="w-full p-6 my-4">
+  <div class="flex justify-between">
+    <div>
+      <img src="" alt="" class="w-25 h-25 bg-red-400">
+      <h3> <%= transaction.info %> </h3>
+      <div class="flex">
+        <span><%= transaction.account.name %> </span>
+        <span> - </span>
+        <span><%= transaction.subcategory.name %> </span>
+      </div>
+    </div>
+    <div class="flex">
+      <div> 
+        <p class="font-medium <%= !transaction.payment.nil? ? 'text-negative' : 'text-positive' %>"><%= !transaction.payment.nil? ? number_to_currency(transaction.payment) : number_to_currency(transaction.deposit) %></p>
+        <span><%= transaction.date %> </span>
+      </div>
+      <div class="ml-6">
+        <p><%= transaction.cleared %></p>
+        <p><%= check_box_tag nil, nil, transaction.cleared?, data: {reflex: 'click->ExampleReflex#toggle', id: transaction.id} %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
